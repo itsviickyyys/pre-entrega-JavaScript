@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Nota Final</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Simulador de Notas Finales</title>
 </head>
 <body>
-    <h1>Calculadora de Nota Final</h1>
+    <body>
+        <div class="container">
+            <h1>Simulador de Notas Finales</h1>
+            
+            <!-- Campo para ingresar el nombre del estudiante -->
+            <input type="text" id="nombre" placeholder="Nombre del estudiante" required>
+            
+            <!-- Campos para ingresar las notas -->
+            <input type="number" id="nota1" placeholder="Nota 1" min="0" max="10" required>
+            <input type="number" id="nota2" placeholder="Nota 2" min="0" max="10" required>
+            <input type="number" id="nota3" placeholder="Nota 3" min="0" max="10" required>
     
-    <label for="nombre">Alumno:</label>
-    <input type="text" id="nombre"><br><br>
-
-    <label for="nota1">Nota 1:</label>
-    <input type="number" id="nota1" min="0" max="100"><br><br>
-
-    <label for="nota2">Nota 2:</label>
-    <input type="number" id="nota2" min="0" max="100"><br><br>
-
-    <label for="nota3">Nota 3:</label>
-    <input type="number" id="nota3" min="0" max="100"><br><br>
-
-    <button id="calcular">Calcular Nota Final</button>
-
-    <h2 id="resultado"></h2>
+            <!-- Botón para calcular la nota final -->
+            <button id="calcular">Calcular Nota Final</button>
+            
+            <!-- Espacio para mostrar el resultado -->
+            <p id="resultado"></p>
+        </div>
     
+        <script src="app.js"></script>
+    </body>
 </body>
-<script src="app.js"></script>
 </html>
