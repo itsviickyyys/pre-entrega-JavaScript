@@ -1,43 +1,47 @@
-// Función para capturar las notas ingresadas por el usuario
+//Capturemos las notas ingresadas pro el usuario
 function capturarNotas() {
-    const nombre = prompt("Ingresa el nombre del estudiante:");
+   
+    const nombre = prompt("Por favor, introduce tu nombre")
+    const notas = [];
 
-    const nota1 = parseFloat(prompt("Ingresa la primera nota:"));
-    const nota2 = parseFloat(prompt("Ingresa la segunda nota:"));
-    const nota3 = parseFloat(prompt("Ingresa la tercera nota:"));
+    while(true){
 
-    // Validar que las notas ingresadas son números válidos
-    if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-        alert("Por favor, ingresa valores numéricos válidos para las notas.");
-        return null; // Detener la ejecución si hay errores
+        let nota = parseInt(prompt("Por favor, Introduce una nota"));
+
+        notas.push(nota);
+
+        let option = prompt("¿Quiere agregar otra nota? \n 1-Si \n 2-No");
+
+        if(option == "2"){
+            break;
+        }
     }
 
-    return {
-        nombre,
-        nota1,
-        nota2,
-        nota3
-    };
+    const usuario = { nombre, notas }
+
+    return usuario;
 }
 
-// Función para calcular el promedio
-function calcularPromedio(nota1, nota2, nota3) {
-    return (nota1 + nota2 + nota3) / 3;
+function calculemosPromedio(arrnotas){
+
+    let sumaTotal = 0;
+
+    let cantidadNotas = arrnotas.length;
+
+    arrnotas.forEach( (nota) => { sumaTotal += nota });
+
+    let resultado = sumaTotal / cantidadNotas;
+
+    return resultado
 }
 
-// Función principal del simulador
-function simuladorNotasFinales() {
-    const datos = capturarNotas();
+function notasFinales() {
 
-    // Si las notas fueron correctamente capturadas
-    if (datos) {
-        const promedio = calcularPromedio(datos.nota1, datos.nota2, datos.nota3);
+    let usuario = capturarNotas();
+    let promedio = calculemosPromedio(usuario.notas);
 
-        // Mostrar el resultado al usuario
-        console.log(`La nota final de ${datos.nombre} es: ${promedio.toFixed(1)}`);
-        alert(`La nota final de ${datos.nombre} es: ${promedio.toFixed(1)}`);
-    }
+    console.log(usuario);
+    console.log(promedio);
 }
 
-// Capturar el clic en el botón y ejecutar el simulador
-document.getElementById('calcular').addEventListener('click', simuladorNotasFinales);
+document.getElementById('calcular').addEventListener('click', notasFinales);
