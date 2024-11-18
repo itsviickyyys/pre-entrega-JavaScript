@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Simulador de Notas Finales</title>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <body>
-        <div class="container">
-            <h1>Simulador de Notas Finales</h1>
-            
-            <!-- Campo para ingresar el nombre del estudiante -->
-            <input type="text" id="nombre" placeholder="Nombre del estudiante" required>
-            
-            <!-- Campos para ingresar las notas -->
-            <input type="number" id="nota1" placeholder="Nota 1" min="0" max="10" required>
-            <input type="number" id="nota2" placeholder="Nota 2" min="0" max="10" required>
-            <input type="number" id="nota3" placeholder="Nota 3" min="0" max="10" required>
-    
-            <!-- Botón para calcular la nota final -->
-            <button id="calcular">Calcular Nota Final</button>
-    
-            <!-- Botón para recuperar y mostrar los datos almacenados -->
-            <button id="mostrar" class="secondary-button">Mostrar Datos Guardados</button>
-            
-            <!-- Espacio para mostrar el resultado -->
-            <p id="resultado"></p>
-        </div>
-    
-        <script src="app.js"></script>
-    </body>
+    <div class="container">
+        <h1 id="titulo">Simulador de Notas Finales</h1>
+        
+        <!-- Campo para ingresar el nombre del estudiante -->
+        <input type="text" id="nombre" placeholder="Nombre del estudiante" required>
+        
+        <!-- Campos para ingresar las notas -->
+        <input type="number" id="nota1" placeholder="Nota 1" min="0" max="10" required>
+        <input type="number" id="nota2" placeholder="Nota 2" min="0" max="10" required>
+        <input type="number" id="nota3" placeholder="Nota 3" min="0" max="10" required>
+
+        <!-- Botones de acción -->
+        <button id="calcular">Calcular Nota Final</button>
+        <button id="mostrar" class="secondary-button">Mostrar Historial</button>
+        <button id="borrar" class="danger-button">Borrar Historial</button>
+        
+        <!-- Espacios para mostrar resultados e historial -->
+        <div id="resultado"></div>
+        <div id="historial"></div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
+
